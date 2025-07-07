@@ -1,135 +1,327 @@
 <!DOCTYPE html>
 <html lang="sr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dušan Kasalović | Digitalna kartica</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background-color: #1b1b1b;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dušan Kasalović | Vizit kartica</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #ffa31a;
+        --gray: #808080;
+        --dark: #1b1b1b;
+        --card-bg: #333333;
+        --white: #f0f0f0;
+        --neon_green: #14ac00;
+      }
 
-    .card {
-      background: linear-gradient(145deg, #292929, #1b1b1b);
-      border-radius: 20px;
-      padding: 40px 25px;
-      max-width: 420px;
-      width: 100%;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-      text-align: center;
-      border: 1px solid #333;
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #ffa31a;
-      margin-bottom: 20px;
-    }
+      body {
+        font-family: "Rubik", sans-serif;
+        /* background-color: var(--dark); */
+        background-color: #555555;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+        color: white;
+      }
 
-    h1 {
-      margin: 10px 0 5px 0;
-      font-size: 26px;
-      color: #ffa31a;
-    }
+      .card {
+        min-width: 320px;
+        background: linear-gradient(160deg, #252525, var(--card-bg));
+        border-radius: 24px;
+        padding: 30px 20px;
+        width: 90%;
+        max-width: 360px;
+        text-align: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      }
 
-    p.subtitle {
-      font-size: 14px;
-      color: #808080;
-      margin-bottom: 30px;
-    }
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--card-bg);
+        margin-bottom: 15px;
+      }
 
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      background-color: #292929;
-      color: #ffffff;
-      border: 1px solid #ffa31a;
-      font-weight: 500;
-      border-radius: 50px;
-      padding: 12px 18px;
-      text-decoration: none;
-      margin: 10px 0;
-      transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(255, 163, 26, 0.15);
-    }
+      .profile-image-border {
+        width: 120px; /* Prilagodi prema svojim potrebama */
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 50%;
+        padding: 3px;
+        background: linear-gradient(135deg, var(--primary), var(--dark));
+        box-shadow: 0 0 5px var(--neon_green), 0 0 5px var(--neon_green),
+          inset 0 0 10px rgba(255, 163, 26, 0.5);
+        position: relative;
+        z-index: 1;
+      }
 
-    .button:hover {
-      background-color: #f0f0f0;
-      color: #1b1b1b;
-      transform: scale(1.03);
-    }
+      .profile-image-border::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--neon_green),
+          var(--dark),
+          var(--neon_green)
+        );
+        z-index: -1;
+        opacity: 1;
+        animation: rotateBorder 4s linear infinite;
+      }
 
-    .button img {
-      width: 24px;
-      height: 24px;
-      margin-right: 12px;
-    }
+      .profile-image-border img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        border: 2px solid var(--card-bg);
+      }
 
-    .btn-text {
-      font-size: 15px;
-    }
-  </style>
-</head>
-<body>
+      @keyframes rotateBorder {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-  <div class="card">
-    <img src="https://media.licdn.com/dms/image/v2/D4D03AQG_cP3M_V-3Aw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723409637755?e=1757548800&v=beta&t=sXxHQjkMaiuEeCcSm3YUWs_13YGmWJvhIyCV2UHgR0k" alt="Dušan Kasalović" class="avatar" />
-    <h1>Dušan Kasalović</h1>
-    <p class="subtitle">Softver inženjer • ikuDev</p>
+      h1 {
+        padding-top: 20px;
+        color: var(--neon_green);
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
 
-    <a class="button" href="tel:+381642872150">
-      <img src="https://img.icons8.com/ios-filled/50/ffa31a/phone.png" />
-      <span class="btn-text">Pozovi</span>
-    </a>
+      .subtitle {
+        color: var(--gray);
+        font-size: 14px;
+        margin-bottom: 25px;
+      }
 
-    <a class="button" href="mailto:duki.kasalovic@hotmail.com">
-      <img src="https://img.icons8.com/ios-filled/50/ffa31a/email.png" />
-      <span class="btn-text">Pošalji email</span>
-    </a>
+      .section {
+        margin: 20px 0;
+      }
 
-    <a class="button" href="https://wa.me/381642872150">
-      <img src="https://img.icons8.com/ios-filled/50/ffa31a/whatsapp.png" />
-      <span class="btn-text">WhatsApp</span>
-    </a>
+      .grid {
+        height: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5%;
+        justify-content: center;
+      }
 
-    <a class="button" href="viber://chat?number=+381642872150">
-      <img src="https://img.icons8.com/ios-filled/50/ffa31a/viber.png" />
-      <span class="btn-text">Viber</span>
-    </a>
+      .icon-button {
+        background-color: #333;
+        border-radius: 18px;
+        padding: 8px 20px 8px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease;
+      }
 
-    <a class="button" href="https://t.me/username">
-      <img src="https://img.icons8.com/ios-filled/50/ffa31a/telegram-app.png" />
-      <span class="btn-text">Telegram</span>
-    </a>
+      .icon-button:hover {
+        transform: scale(1.05);
+      }
 
-    <a class="button" href="https://www.instagram.com/randomprofil">
-      <img src="https://img.icons8.com/ios-filled/50/ffa31a/instagram-new.png" />
-      <span class="btn-text">Instagram</span>
-    </a>
+      .icon-button img {
+        max-width: 38px;
+        max-height: 38px;
+      }
 
-    <a class="button" href="https://www.facebook.com/randomprofil">
-      <img src="https://img.icons8.com/ios-filled/50/ffa31a/facebook-new.png" />
-      <span class="btn-text">Facebook</span>
-    </a>
+      /* Brend boje */
+      .viber {
+        background-color: #7360f2;
+      }
+      .whatsapp {
+        background-color: #25d366;
+      }
+      .telegram {
+        background-color: #0088cc;
+      }
+      .email {
+        background-color: #ff4f4f;
+      }
+      .call {
+        background-color: #009347;
+      }
+      .instagram {
+        background-color: #e1306c;
+      }
+      .facebook {
+        background-color: #3b5998;
+      }
+      .download {
+        background-color: #ffaa00;
+      }
+      .github {
+        background-color: #f0f0f0;
+      }
+      .contact {
+        background-color: #ff7733;
+        filter: invert(100%);
+      }
+      .linkedin {
+        background-color: #f18957;
+        filter: invert(100%);
+      }
+      .hotmail {
+        background-color: #f18957;
+        filter: invert(100%);
+      }
+      .sms {
+        background-color: #ff6cb8;
+        filter: invert(100%);
+      }
+      .snapchat {
+        background-color: #0003ff;
+        filter: invert(100%);
+      }
 
-    <a class="button" href="kontakt.vcf" download>
-      <img src="https://img.icons8.com/ios-filled/50/ffa31a/id-verified.png" />
-      <span class="btn-text">Dodaj u kontakte</span>
-    </a>
-  </div>
+      footer {
+        margin-top: 30px;
+        font-size: 12px;
+        color: var(--gray);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer-container">
+      <div class="card">
+        <div class="profile-image-border">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D03AQG_cP3M_V-3Aw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723409637755?e=1757548800&v=beta&t=sXxHQjkMaiuEeCcSm3YUWs_13YGmWJvhIyCV2UHgR0k"
+            alt="Dušan Kasalović"
+            class="avatar"
+          />
+        </div>
+        <h1>Dušan Kasalović</h1>
+        <p class="subtitle">Softver inženjer • ikuDev</p>
 
-</body>
+        <!-- Sekcija 1: Chat -->
+        <div class="section">
+          <div class="grid">
+            <a
+              class="icon-button viber"
+              href="viber://chat?number=+381642872150"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/viber.png"
+              />
+            </a>
+            <a class="icon-button whatsapp" href="https://wa.me/381642872150">
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png"
+              />
+            </a>
+            <a class="icon-button telegram" href="https://wa.me/381642872150">
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Sekcija 2: Social -->
+        <div class="section">
+          <div class="grid">
+            <a
+              class="icon-button instagram"
+              href="https://www.instagram.com/randomprofil"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png"
+              />
+            </a>
+            <a
+              class="icon-button facebook"
+              href="https://www.facebook.com/randomprofil"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png"
+              />
+            </a>
+            <a
+              class="icon-button snapchat"
+              href="https://www.facebook.com/randomprofil"
+            >
+              <img
+                style="background-color: white; border-radius: 8px !important"
+                src="https://img.icons8.com/?size=100&id=23026&format=png&color=000000"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Sekcija 3: Kontakt fajl -->
+        <div class="section">
+          <div class="grid">
+            <a
+              class="icon-button linkedin"
+              href="https://www.facebook.com/randomprofil"
+            >
+              <img
+                src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000"
+              />
+            </a>
+            <a class="icon-button github" href="kontakt.vcf" download>
+              <img
+                src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000"
+              />
+            </a>
+            <a class="icon-button contact" href="kontakt.vcf" download>
+              <img
+                src="https://img.icons8.com/?size=100&id=7863&format=png&color=000000"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Sekcija 4: Kontakt -->
+        <div class="section">
+          <div class="grid">
+            <a class="icon-button call" href="tel:+381642872150">
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/phone.png"
+              />
+            </a>
+            <a class="icon-button sms" href="mailto:duki.kasalovic@hotmail.com">
+              <img
+                src="https://img.icons8.com/?size=100&id=11464&format=png&color=000000"
+              />
+            </a>
+            <a
+              class="icon-button hotmail"
+              href="mailto:duki.kasalovic@hotmail.com"
+            >
+              <img
+                src="https://img.icons8.com/?size=100&id=11592&format=png&color=000000"
+              />
+            </a>
+          </div>
+        </div>
+
+        <footer>2025. Zupče, Zubin Potok</footer>
+      </div>
+    </div>
+  </body>
 </html>
