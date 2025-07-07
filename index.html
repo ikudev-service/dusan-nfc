@@ -3,43 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dušan Kasalović</title>
+  <title>Dušan Kasalović | Digitalna kartica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: sans-serif;
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background-color: #1b1b1b;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    .card {
+      background-color: #292929;
+      border-radius: 16px;
+      padding: 30px 20px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
       text-align: center;
-      padding: 40px 20px;
-      background: #f4f4f4;
     }
-    img {
+
+    .avatar {
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      width: 150px;
-      margin-bottom: 20px;
+      object-fit: cover;
+      border: 4px solid #ffa31a;
+      margin-bottom: 15px;
     }
-    h1 { color: #333; }
+
+    h1 {
+      margin: 10px 0 4px 0;
+      font-size: 24px;
+      color: #ffa31a;
+    }
+
+    p.subtitle {
+      font-size: 14px;
+      color: #808080;
+      margin-bottom: 30px;
+    }
+
     .button {
-      display: block;
-      margin: 10px auto;
-      padding: 12px 24px;
-      width: 80%;
-      max-width: 300px;
-      background-color: #007bff;
-      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffa31a;
+      color: #1b1b1b;
+      font-weight: 600;
       border-radius: 8px;
+      padding: 12px 20px;
       text-decoration: none;
-      font-weight: bold;
+      margin: 10px 0;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #e69210;
+    }
+
+    .icon {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .spacer {
+      height: 10px;
     }
   </style>
+  <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <img src="https://imgur.com/a/qGOkNYe" alt="Profilna slika">
-  <h1>Dušan Kasalović</h1>
-  <p>Softver inženjer • ikuDev</p>
 
-  <a class="button" href="tel:+381 64 287 2150">📞 Pozovi</a>
-  <a class="button" href="mailto:duki.kasalovic@hotmail.com">✉️ Pošalji email</a>
-  <a class="button" href="https://www.instagram.com/d.kasalovic/">📸 Instagram</a>
-  <a class="button" href="https://www.linkedin.com/in/d-kasalovic/">🔗 LinkedIn</a>
-  <a class="button" href="kontakt.vcf">📇 Dodaj u kontakte</a>
+  <div class="card">
+    <img src="https://i.imgur.com/qGOkNYe.jpg" alt="Dušan Kasalović" class="avatar">
+    <h1>Dušan Kasalović</h1>
+    <p class="subtitle">Softver inženjer • ikuDev</p>
+
+    <a class="button" href="tel:+381641234567">
+      <i class="fas fa-phone icon"></i> Pozovi
+    </a>
+    <a class="button" href="mailto:dusan@email.com">
+      <i class="fas fa-envelope icon"></i> Pošalji email
+    </a>
+    <a class="button" href="https://wa.me/381641234567">
+      <i class="fab fa-whatsapp icon"></i> WhatsApp
+    </a>
+    <a class="button" href="viber://chat?number=+381641234567">
+      <i class="fab fa-viber icon"></i> Viber
+    </a>
+    <a class="button" href="https://t.me/korisnickoime">
+      <i class="fab fa-telegram icon"></i> Telegram
+    </a>
+    <a class="button" href="https://www.instagram.com/tvojprofil">
+      <i class="fab fa-instagram icon"></i> Instagram
+    </a>
+    <a class="button" href="https://www.facebook.com/tvojprofil">
+      <i class="fab fa-facebook icon"></i> Facebook
+    </a>
+    <a class="button" href="kontakt.vcf" download>
+      <i class="fas fa-id-card icon"></i> Dodaj u kontakte
+    </a>
+  </div>
+
 </body>
 </html>
