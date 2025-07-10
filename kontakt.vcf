@@ -1,7 +1,17 @@
 BEGIN:VCARD
 VERSION:3.0
+PRODID:-//Apple Inc.//iOS 18.0.1//EN
+N:Kasalović;Dušan;;;
 FN:Dušan Kasalović
-TEL:+381642872150
-EMAIL:duki.kasalovic@hotmail.com
-URL:https://www.instagram.com/d.kasalovic/
+ORG:ikuDev;
+EMAIL;type=INTERNET;type=WORK;type=pref:ikudev@hotmail.com
+TEL;type=CELL;type=VOICE;type=pref:+381 64 2872 150
+TEL;type=WORK;type=VOICE:+7 (911) 364-75-36
+BDAY;value=date:2002-08-18
+X-SOCIALPROFILE;type=Instagram;x-user=d.kasalovic;x-teamidentifier=777W53UF
+ B2;x-bundleidentifiers=com.burbn.instagram:x-apple:d.kasalovic
+X-SHARED-PHOTO-DISPLAY-PREF:ALWAYS_ASK
+REV:2025-03-18T01:36:53Z
+X-IMAGETYPE:PHOTO
+X-IMAGEHASH:gXs4x8ZpWWn+1OavC0tzKw==
 END:VCARD
